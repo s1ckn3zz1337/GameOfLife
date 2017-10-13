@@ -1,6 +1,14 @@
+#gameOfLife{
+    margin-left: auto;
+    margin-right: auto;
+    width:30em;
+}
+
 .gameField{
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
+    margin:3px;
+    border: 1px solid black;
 }
 
 .row{
@@ -8,6 +16,6 @@
 }
 
 .whiteField{
-    border: 2px solid black;
+    border: 1px solid black;
     background-color: white;
 }
