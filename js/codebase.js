@@ -78,7 +78,6 @@ var saveMatrix = function() {
 
   });
   matrix.field = field;
-  console.log(matrix);
   downloadJson(matrix);
 
 }
