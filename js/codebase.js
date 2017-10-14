@@ -4,6 +4,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     generateField(2,2);
 });
+
+function isInt(value) {
+    return !isNaN(value) &&
+        parseInt(Number(value)) == value &&
+        !isNaN(parseInt(value, 10));
+}
+
 var textFile = null;
 var generateField = function(x,y){
     var mainField = document.getElementById('gameField');
@@ -78,7 +85,6 @@ var saveMatrix = function() {
   matrix.field = field;
   console.log(matrix);
   downloadJson(matrix);
-
 }
 
 var downloadJson = function(json){
