@@ -5,7 +5,7 @@ document.getElementById("generate").addEventListener("click", function(){
     //generiere Matrix
     var x = document.getElementById("xSize").value;
     var y = document.getElementById("ySize").value;
-    alert("Matrix wird generiert mit " + x + " und " + y);
+    //alert("Matrix wird generiert mit " + x + " und " + y);
     generateField(x, y);
 });
 

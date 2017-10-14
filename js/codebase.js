@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var generateField = function(x,y){
     var mainField = document.getElementById('gameField');
+    deleteGameField();
+
     for(var i = 0; i<x; i++){
         var rowField = document.createElement('div');
         rowField.id = 'row'+i;
@@ -22,3 +24,11 @@ var generateField = function(x,y){
         mainField.appendChild(rowField);
     }
 };
+
+var deleteGameField = function(){
+  var mainField = document.getElementById('gameField');
+  while (mainField.firstChild) {
+    mainField.removeChild(mainField.firstChild);
+  }
+
+}
