@@ -5,6 +5,16 @@ document.addEventListener("DOMContentLoaded", function() {
     generateField(2,2);
 });
 
+document.getElementById("generate").addEventListener("click", function(){
+    //generiere Matrix
+    var x = document.getElementById("xSize").value;
+    var y = document.getElementById("ySize").value;
+    alert("Matrix wird generiert mit " + x + " und " + y);
+    generateField(x, y);
+
+
+});
+
 
 document.getElementById("reset").addEventListener("click", function(){
    //leere Feld
