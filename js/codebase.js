@@ -19,12 +19,26 @@ var generateField = function(x,y){
             singleGameField.className = 'gameField whiteField';
             singleGameField.setAttribute("xPosition",row);
             singleGameField.setAttribute("yPosition",column);
+            singleGameField.addEventListener("click",singleFieldClick);
 
             rowField.appendChild(singleGameField);
         }
         mainField.appendChild(rowField);
     }
 };
+
+var singleFieldClick = function(){
+  this.classList.toggle("selected");
+}
+
+var iterateOverField = function(mainField) {
+  mainField.childNodes.forEach(function(currentRow){
+    currentRow.childNodes.forEach(function(currentField) {
+      console.log(currentField.getAttribute("xPosition"));
+      console.log(currentField.getAttribute("yPosition"));
+    });
+  });
+}
 
 var deleteGameField = function(){
   var mainField = document.getElementById('gameField');
