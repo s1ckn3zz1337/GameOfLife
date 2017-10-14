@@ -1,7 +1,14 @@
 #gameOfLife{
     margin-left: auto;
     margin-right: auto;
-    width:30em;
+}
+
+#gameField{
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    overflow: scroll;
 }
 
 .gameField{

@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     generateField(2,2);
 });
 
-
-
 var generateField = function(x,y){
     var mainField = document.getElementById('gameField');
     deleteGameField();

@@ -6,22 +6,26 @@
     <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-<input type="number" id="xSize" value = "1" min="1" max="100"/>
-<input type="number" id="ySize" value= "1" min="1" max="100"/>
-<button type="button" id="generate">Generate Matrix</button>
-<button type="button" id="reset">Reset</button>
-<button type="button" id="random">Random</button>
-<button type="button" id="start">Start/Stop</button>
-<div id="gameField">
-</div>
-<div class="box controls">
-      <div class="subtitle">Controls</div>
-      <form action="">
-        <input type="button" value="Step" id="buttonStep" title="Key: Step" />
-        <input type="button" value="Save" id="buttonSave" title="Key: Save" />
-        <input type="button" value="Load" id="buttonLoad" title="Key: Load" />
-      </form>
-  </div>
+    <div id="gameOfLife">
+        <input type="number" id="xSize" value="1" min="1"/>
+        <input type="number" id="ySize" value="1" min="1"/>
+        <button type="button" id="generate">Generate Matrix</button>
+        <button type="button" id="reset">Reset</button>
+        <button type="button" id="random">Random</button>
+        <button type="button" id="start">Start/Stop</button>
+        <div id="gameField">
+
+        </div>
+        <div class="box controls">
+            <div class="subtitle">Controls</div>
+            <form action="">
+                <input type="button" value="Play" id="buttonPlay" title="Key: Play" />
+                <input type="button" value="Step" id="buttonStep" title="Key: Step" />
+                <input type="button" value="Save" id="buttonSave" title="Key: Save" />
+                <input type="button" value="Load" id="buttonLoad" title="Key: Load" />
+            </form>
+        </div>
+    </div>
 <script type="text/javascript" src="js/codebase.js"></script>
 <script type="text/javascript" src="js/buttonListener.js"></script>
 </body>
