@@ -90,3 +90,25 @@ var randomizeField = function () {
         singleField.classList.toggle("selected", Math.random()>0.5);
     })
 }
+
+
+var generateFieldFromJson = function(json){
+    var mainField = document.getElementById('gameField');
+    generateField(json.x, json.y);
+    iterateOverField(mainField,function (singleField) {
+        var x = singleField.getAttribute("xPosition");
+        var y = singleField.getAttribute("yPosition");
+        singleField.classList.toggle("selected", json.field[x][y]);
+    })
+}
+
+
+var feld = {
+    "x" : 3,
+    "y" : 3, "field": [
+        [true, true, true],
+        [false,true,false],
+        [false,false,false]
+    ]
+};
+

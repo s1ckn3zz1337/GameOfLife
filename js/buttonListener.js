@@ -36,5 +36,5 @@ document.getElementById("buttonSave").addEventListener("click", function(){
 
 document.getElementById("buttonLoad").addEventListener("click", function(){
     //start/stop
-    alert("Matrix wird aus File geladen");
+    generateFieldFromJson(feld);
 });
