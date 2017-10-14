@@ -5,7 +5,7 @@ document.getElementById("generate").addEventListener("click", function(){
     //generiere Matrix
     var x = document.getElementById("xSize").value;
     var y = document.getElementById("ySize").value;
-    alert("Matrix wird generiert mit " + x + " und " + y);
+    //alert("Matrix wird generiert mit " + x + " und " + y);
     generateField(x, y);
 });
 
@@ -23,4 +23,19 @@ document.getElementById("random").addEventListener("click", function(){
 document.getElementById("start").addEventListener("click", function(){
     //start/stop
     alert("Spiel wird gestartet/gestoppt");
+});
+
+document.getElementById("buttonStep").addEventListener("click", function(){
+    //start/stop
+    alert("Einzelner Schritt wird ausgeführt");
+});
+
+document.getElementById("buttonSave").addEventListener("click", function(){
+    //start/stop
+    alert("Matrix wird gespeichert");
+});
+
+document.getElementById("buttonLoad").addEventListener("click", function(){
+    //start/stop
+    alert("Matrix wird aus File geladen");
 });

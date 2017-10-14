@@ -9,16 +9,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var generateField = function(x,y){
     var mainField = document.getElementById('gameField');
-    for(var i = 0; i<x; i++){
+    deleteGameField();
+
+    for(var row = 0; row<x; row++){
         var rowField = document.createElement('div');
-        rowField.id = 'row'+i;
+        rowField.id = 'row'+row;
         rowField.className = 'row';
-        for(var j= 0; j<y; j++){
+        for(var column= 0; column<y; column++){
             var singleGameField = document.createElement('div');
-            singleGameField.id = 'row'+i+'field'+j;
+            singleGameField.id = 'row'+row+'field'+column;
             singleGameField.className = 'gameField whiteField';
             rowField.appendChild(singleGameField);
         }
         mainField.appendChild(rowField);
     }
 };
+
+var deleteGameField = function(){
+  var mainField = document.getElementById('gameField');
+  while (mainField.firstChild) {
+    mainField.removeChild(mainField.firstChild);
+  }
+
+}
