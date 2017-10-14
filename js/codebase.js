@@ -2,6 +2,8 @@
  * Created by s1ckn3zz on 13.10.17.
  */
 document.addEventListener("DOMContentLoaded", function() {
+    localStorage.setItem("x", 2);
+    localStorage.setItem("y", 2);
     generateField(2,2);
 });
 
@@ -83,7 +85,6 @@ var saveMatrix = function() {
 
   });
   matrix.field = field;
-  console.log(matrix);
   downloadJson(matrix);
 }
 
@@ -162,4 +163,3 @@ var feld = {
         [false,false,false]
     ]
 };
-
