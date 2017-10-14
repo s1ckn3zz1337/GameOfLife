@@ -12,7 +12,8 @@ document.getElementById("generate").addEventListener("click", function(){
 
 document.getElementById("reset").addEventListener("click", function(){
     //leere Feld
-    alert("Feld wird geleert");
+    alert("GameField wird geleert");
+    resetFields();
 });
 
 document.getElementById("random").addEventListener("click", function(){

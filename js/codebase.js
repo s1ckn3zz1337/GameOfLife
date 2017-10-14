@@ -40,6 +40,20 @@ var iterateOverField = function(mainField) {
   });
 }
 
+var resetFields = function() {
+
+  var mainField = document.getElementById('gameField');
+
+
+  mainField.childNodes.forEach(function(currentRow){
+    currentRow.childNodes.forEach(function(currentField) {
+      if(currentField.classList.contains("selected")){
+        currentField.classList.toggle("selected");
+      }
+    });
+  });
+}
+
 var deleteGameField = function(){
   var mainField = document.getElementById('gameField');
   while (mainField.firstChild) {
