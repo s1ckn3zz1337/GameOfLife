@@ -30,11 +30,10 @@ var singleFieldClick = function(){
   this.classList.toggle("selected");
 };
 
-var iterateOverField = function(mainField) {
+var iterateOverField = function(mainField, singleFieldFunction) {
   mainField.childNodes.forEach(function(currentRow){
     currentRow.childNodes.forEach(function(currentField) {
-      console.log(currentField.getAttribute("xPosition"));
-      console.log(currentField.getAttribute("yPosition"));
+        singleFieldFunction(currentField);
     });
   });
 };
@@ -136,7 +135,7 @@ var generateFieldFromJson = function(json){
     iterateOverField(mainField,function (singleField) {
         var x = singleField.getAttribute("xPosition");
         var y = singleField.getAttribute("yPosition");
-        singleField.classList.toggle("selected", json.field[x][y]);
+        singleField.classList.toggle("selected", json.field[x][y]==="true");
     })
 }
 
