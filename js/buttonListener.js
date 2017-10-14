@@ -6,6 +6,10 @@ document.getElementById("generate").addEventListener("click", function(){
     var x = document.getElementById("xSize").value;
     var y = document.getElementById("ySize").value;
     //alert("Matrix wird generiert mit " + x + " und " + y);
+    localStorage.setItem("x", x);
+    localStorage.setItem("y", y);
+
+
     generateField(x, y);
 });
 
@@ -34,6 +38,7 @@ document.getElementById("buttonStep").addEventListener("click", function(){
 document.getElementById("buttonSave").addEventListener("click", function(){
     //start/stop
     alert("Matrix wird gespeichert");
+    saveMatrix();
 });
 
 document.getElementById("buttonLoad").addEventListener("click", function(){

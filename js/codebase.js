@@ -41,9 +41,30 @@ var iterateOverField = function(mainField) {
 }
 
 var resetFields = function() {
+  var mainField = document.getElementById('gameField');
+  mainField.childNodes.forEach(function(currentRow){
+    currentRow.childNodes.forEach(function(currentField) {
+      if(currentField.classList.contains("selected")){
+        currentField.classList.toggle("selected");
+      }
+    });
+  });
+}
 
+var saveMatrix = function() {
   var mainField = document.getElementById('gameField');
 
+  var x = localStorage.getItem("x");
+  var y = localStorage.getItem("y");
+
+  var matrixJson = [];
+
+  matrixJson.push({
+    x: x,
+    y: y
+  });
+
+  console.log(matrixJson);
 
   mainField.childNodes.forEach(function(currentRow){
     currentRow.childNodes.forEach(function(currentField) {
@@ -53,6 +74,8 @@ var resetFields = function() {
     });
   });
 }
+
+
 
 var deleteGameField = function(){
   var mainField = document.getElementById('gameField');
