@@ -12,13 +12,11 @@ document.getElementById("generate").addEventListener("click", function(){
 
 document.getElementById("reset").addEventListener("click", function(){
     //leere Feld
-    alert("GameField wird geleert");
     resetFields();
 });
 
 document.getElementById("random").addEventListener("click", function(){
-    //random Feld
-    alert("Feld wird random gefüllt");
+    randomizeField();
 });
 
 document.getElementById("start").addEventListener("click", function(){

@@ -31,11 +31,10 @@ var singleFieldClick = function(){
   this.classList.toggle("selected");
 }
 
-var iterateOverField = function(mainField) {
+var iterateOverField = function(mainField, singleFieldFunction) {
   mainField.childNodes.forEach(function(currentRow){
     currentRow.childNodes.forEach(function(currentField) {
-      console.log(currentField.getAttribute("xPosition"));
-      console.log(currentField.getAttribute("yPosition"));
+        singleFieldFunction(currentField);
     });
   });
 }
@@ -60,4 +59,11 @@ var deleteGameField = function(){
     mainField.removeChild(mainField.firstChild);
   }
 
+}
+
+var randomizeField = function () {
+    var mainField = document.getElementById('gameField');
+    iterateOverField(mainField,function (singleField) {
+        singleField.classList.toggle("selected", Math.random()>0.5);
+    })
 }
