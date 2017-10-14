@@ -155,11 +155,37 @@ var handleFile = function(event){
     fr.readAsText(file);
 }
 
-var feld = {
-    "x" : 3,
-    "y" : 3, "field": [
-        [true, true, true],
-        [false,true,false],
-        [false,false,false]
-    ]
+var checkField = function(field){
+    var mainField = document.getElementById('gameField');
+    var xStart = field.getAttribute("xPosition")-1;
+    var yStart = field.getAttribute("yPosition")-1;
+    var neighborPopulation = 0;
+    var matrix = mainField.childNodes;
+    for(var i = xStart; i< xStart+3; i++){
+        for(var j = yStart; j<yStart+3; j++){
+            var realI = i;
+            var realJ = j;
+            if(i<0){
+                realI = matrix.length+i;
+            }
+            if(i>(matrix.length-1)){
+                realI = 0;
+            }
+            if(j<0){
+                realJ = matrix[realI].childNodes.length+1;
+            }
+            if(j>matrix[realJ].childNodes.length-1){
+                realJ = 0;
+            }
+            matrix[realJ].childNodes[realI].classList.toggle("inFocus");
+           if(matrix[realJ].childNodes[realI].classList.contains("selected")){
+               if(j != xStart+1 && i != yStart+1){
+                   neighborPopulation++;
+               }
+           }
+           matrix[realJ].childNodes[realI].classList.toggle("inFocus");
+        }
+    }
+    console.log(neighborPopulation);
 };
+

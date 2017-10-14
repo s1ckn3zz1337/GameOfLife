@@ -48,6 +48,7 @@ document.getElementById("random").addEventListener("click", function(){
 
 document.getElementById("buttonStep").addEventListener("click", function(){
     //start/stop
+    iterateOverField(document.getElementById("gameField"),checkField);
     alert("Einzelner Schritt wird ausgeführt");
 });
 
