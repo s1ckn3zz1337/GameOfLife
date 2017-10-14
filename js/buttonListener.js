@@ -19,11 +19,6 @@ document.getElementById("random").addEventListener("click", function(){
     randomizeField();
 });
 
-document.getElementById("start").addEventListener("click", function(){
-    //start/stop
-    alert("Spiel wird gestartet/gestoppt");
-});
-
 document.getElementById("buttonStep").addEventListener("click", function(){
     //start/stop
     alert("Einzelner Schritt wird ausgeführt");
