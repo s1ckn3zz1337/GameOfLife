@@ -24,3 +24,18 @@ document.getElementById("start").addEventListener("click", function(){
     //start/stop
     alert("Spiel wird gestartet/gestoppt");
 });
+
+document.getElementById("buttonStep").addEventListener("click", function(){
+    //start/stop
+    alert("Einzelner Schritt wird ausgeführt");
+});
+
+document.getElementById("buttonSave").addEventListener("click", function(){
+    //start/stop
+    alert("Matrix wird gespeichert");
+});
+
+document.getElementById("buttonLoad").addEventListener("click", function(){
+    //start/stop
+    alert("Matrix wird aus File geladen");
+});
