@@ -102,6 +102,14 @@ var generateFieldFromJson = function(json){
     })
 }
 
+var handleFile = function(event){
+    var file = event.target.files[0];
+    var fr = new FileReader();
+    fr.onload = function(readyEvent){
+        generateFieldFromJson(JSON.parse(readyEvent.target.result));
+    };
+    fr.readAsText(file);
+}
 
 var feld = {
     "x" : 3,

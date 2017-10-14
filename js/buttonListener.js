@@ -34,7 +34,8 @@ document.getElementById("buttonSave").addEventListener("click", function(){
     saveMatrix();
 });
 
-document.getElementById("buttonLoad").addEventListener("click", function(){
-    //start/stop
-    generateFieldFromJson(feld);
+document.getElementById("buttonLoad").addEventListener("change", function(event){
+    handleFile(event);
+    event.target.value = "";
+    //generateFieldFromJson(feld);
 });
