@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     generateField(2,2);
 });
-
+var textFile = null;
 var generateField = function(x,y){
     var mainField = document.getElementById('gameField');
     deleteGameField();
@@ -30,10 +30,11 @@ var singleFieldClick = function(){
   this.classList.toggle("selected");
 };
 
-var iterateOverField = function(mainField, singleFieldFunction) {
+var iterateOverField = function(mainField) {
   mainField.childNodes.forEach(function(currentRow){
     currentRow.childNodes.forEach(function(currentField) {
-        singleFieldFunction(currentField);
+      console.log(currentField.getAttribute("xPosition"));
+      console.log(currentField.getAttribute("yPosition"));
     });
   });
 };
@@ -56,24 +57,61 @@ var saveMatrix = function() {
   var x = localStorage.getItem("x");
   var y = localStorage.getItem("y");
 
-  var matrixJson = [];
 
-  matrixJson.push({
-    x: x,
-    y: y
-  });
+  var matrix = {};
+  matrix.x = x;
+  matrix.y = y;
 
-  console.log(matrixJson);
+  var field = [];
+  mainField.childNodes.forEach(function(currentColumn){
+    var row = [];
+    currentColumn.childNodes.forEach(function(currentField) {
 
-  mainField.childNodes.forEach(function(currentRow){
-    currentRow.childNodes.forEach(function(currentField) {
       if(currentField.classList.contains("selected")){
-        currentField.classList.toggle("selected");
+        row.push("true");
+      }else{
+        row.push("false");
       }
     });
+    field.push(row);
+
   });
+  matrix.field = field;
+  console.log(matrix);
+  downloadJson(matrix);
+
 }
 
+var downloadJson = function(json){
+  textFile = makeTextFile(json);
+  var link = document.createElement('a');
+  link.setAttribute('download', 'saveGame.gof');
+  link.href = textFile
+  document.body.appendChild(link);
+
+    // wait for the link to be added to the document
+
+   window.requestAnimationFrame(function () {
+      var event = new MouseEvent('click');
+      link.dispatchEvent(event);
+      document.body.removeChild(link);
+    });
+}
+
+var makeTextFile = function (json) {
+  var data = new Blob([JSON.stringify(json, null, 4)], {type: 'text/plain'});
+
+  // If we are replacing a previously generated file we need to
+  // manually revoke the object URL to avoid memory leaks.
+  if (textFile !== null) {
+    window.URL.revokeObjectURL(textFile);
+  }
+
+  textFile = window.URL.createObjectURL(data);
+
+  // returns a URL you can use as a href
+  return textFile;
+};
 
 
 var deleteGameField = function(){
