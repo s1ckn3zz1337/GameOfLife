@@ -17,6 +17,9 @@ var generateField = function(x,y){
             var singleGameField = document.createElement('div');
             singleGameField.id = 'row'+row+'field'+column;
             singleGameField.className = 'gameField whiteField';
+            singleGameField.setAttribute("xPosition",row);
+            singleGameField.setAttribute("yPosition",column);
+
             rowField.appendChild(singleGameField);
         }
         mainField.appendChild(rowField);
